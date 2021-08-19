@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-var usuarioController = require("../controller/usuarioController");
+var usuarioController = require("../controller/calculadoraController");
 
 //CREATE
 router.get("/add", usuarioController.abreAdd);
