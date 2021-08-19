@@ -1,12 +1,11 @@
-const express = require("express");
-const app = express();
-var usuarioRoute = require("./routes/calculadoraRoute");
+var express = require("express");
+var app = express();
+var calculadoraRoute = require("./routes/calculadoraRoute");
 
-app.get('/soma/:num1/:num2',function(req,res){
-  var soma = req.params.num1+req.params.num2
-  res.send('O resultado da soma é: '+ soma)
-})
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+app.set("view engine", "ejs");
 
 app.listen(3000,function(){
   console.log('Servidor iniciado!');
